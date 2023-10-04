@@ -1,0 +1,35 @@
+[9:31 pm, 02/10/2023] Sowzzz Rv: package pkg;
+
+public class Product {
+	String name;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	int id;
+}
+[9:32 pm, 02/10/2023] Sowzzz Rv: package pkg;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.GET;
+import pkg.Product;
+@Path("/json/service")
+public class RestServices {
+	@GET
+	@Path("/get")
+	@Produces("/Application/json")
+	public Product getApplication() {
+		Product Pr = new Product();
+		Pr.setName("Ipod");
+		Pr.setId(1);
+		return Pr;
+	}
+}
